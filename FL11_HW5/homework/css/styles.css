@@ -1,0 +1,269 @@
+body {
+  font-family: roboto;
+  background-color: #0B192F;
+}
+.post-1 {
+	background: #B71757;
+}
+.post-2 {
+	background: #0D7E71;
+}
+.post-3 {
+	background: #b1660e;
+}
+.post-4 {
+	background: #d12767;
+}
+.post-5 {
+	background: #2d95bb;
+}
+header {
+	background-color: #162B4D;
+}
+nav ul {
+	list-style: none;
+	padding-left: 0;
+}
+body {
+    color: white;
+	margin: 0;
+}
+@media (max-width: 1400px) {
+.wrapper {
+	display: grid;
+	grid-template-rows: 10vw auto auto; 
+	grid-row-gap: 2vw;
+}
+header {
+	background-color: #162B4D;
+}
+.main_head {
+	display: grid;
+	grid-template-columns: auto auto;
+	align-content: center;
+}
+.header_logo {
+	align-self: center;
+	font-weight: 100;
+	font-size: 4vw;
+}
+.header_logo span {
+	color: #B71757;
+}
+.main_nav {
+	font-size: 1.4vw;
+}
+.main_nav li {
+	display: inline;
+}
+.main_nav li a {
+	text-decoration: none;
+	color: white;
+	padding-right: 1.3vw;
+}
+.alt_nav {
+	display: none;
+}
+header .main_nav {
+	text-align: right;
+}
+section .date {
+	display: flex;
+    color: rgba(233, 233, 233, 0.5);
+    flex-direction: column;
+    font-size: 4.0vw;
+    font-weight: 100;
+    text-align: center;
+    padding: 1vw 1.5vw;
+}
+.date span {
+	font-size: 2vw;
+}
+.post_tx {
+	padding: 0 3vw 2vw 3vw;
+}
+.post_tx p {
+	color: rgb(206, 206, 206);
+    font-size: 1.2vw;
+    line-height: 2.0vw;
+}
+section h2 {
+	font-weight: 100;
+	font-size: 4vw;
+}
+section img {
+	width: 50%;
+	height: auto;
+}
+article {
+	display: grid;
+	grid-template-columns: 75vw auto; 
+	grid-column-gap: 1.5vw;
+    flex-direction: row;
+}
+section {
+	display: flex;
+	flex-direction: row-reverse;
+}
+section:nth-child(even) {
+	display: flex;
+	flex-direction: row;
+	text-align: right;
+}
+.aside_blocks aside {
+	background-color: white;
+	color: black;
+}
+.aside_text {
+	padding: 0vw 2vw 2vw 2vw;
+}
+.aside_text h2 {
+	font-size: 2.0vw;
+    font-weight: 400;
+}
+.aside p {
+	line-height: 1.7vw;
+    font-size: 1.2vw;
+}
+aside img {
+	width: 100%;
+}
+footer {
+    display: grid;
+    grid-template-columns: 84vw auto;
+    color: rgba(206, 206, 206, 0.5);
+    font-size: 1vw;
+    padding: 3.5vw 3vw;
+    background-color: #162B4D;
+    font-weight: 100;
+  }
+}
+@media (max-width: 768px) {
+	.wrapper {
+		display: grid;
+		grid-template-rows: 20vw auto auto; 
+		grid-row-gap: 2vw;
+	}
+	header {
+		background-color: #162B4D;
+		text-align: center;
+	}
+	.main_head {
+		display: grid;
+		grid-template-columns: auto;
+		align-content: center;
+	}
+	.header_logo {
+		align-self: center;
+		font-weight: 100;
+		font-size: 4vw;
+	}
+	.header_logo span {
+		color: #B71757;
+	}
+	.main_nav {
+		display: none;
+	}
+	.alt_nav {
+		justify-content: center;
+		display: flex;
+	}
+	.alt_nav li {
+	  width: 4vw;
+	  height: 0.5vw;
+	  background-color: white;
+	  margin: 1vw 0;
+	}
+	article {
+		display: grid;
+		grid-template-columns: 60vw auto; 
+		grid-column-gap: 1.5vw;
+	    flex-direction: row;
+	}
+	section {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	section:nth-child(even) {
+		display: flex;
+		flex-direction: column-reverse;
+		text-align: left;
+	}
+	section img {
+		width: 100%;
+		height: auto;
+	}
+	.post_tx {
+		padding: 0 4vw 2vw 4vw;
+	}
+	.post_tx h2 {
+	    font-size: 5vw;
+		
+	}
+	.post_tx p {
+		color: rgb(206, 206, 206);
+	    font-size: 2vw;
+	    line-height: 3.0vw;
+	}
+	section .date {
+		display: flex;
+	    color: rgba(233, 233, 233, 0.5);
+	    flex-direction: column;
+	    font-size: 6.0vw;
+	    font-weight: 100;
+	    text-align: center;
+	    padding: 1vw 1.5vw;
+	}
+	.date span {
+		font-size: 3vw;
+	}
+	footer {
+	    display: grid;
+	    grid-template-columns: 84vw;
+	    text-align: center;
+	    color: rgba(206, 206, 206, 0.5);
+	    font-size: 1vw;
+	    padding: 3.5vw 3vw;
+	    background-color: #162B4D;
+	    font-weight: 100;
+	}
+}	
+@media (max-width: 480px) {
+	article {
+		display: grid;
+		grid-template-columns: none; 
+		grid-column-gap: 1.5vw;
+	    flex-direction: row;
+	}
+	.post_tx h2 {
+	    font-size: 8vw;
+	}
+	.post_tx p {
+		color: rgb(206, 206, 206);
+	    font-size: 3vw;
+	    line-height: 4.0vw;
+	}
+	section .date {
+		display: flex;
+	    color: rgba(233, 233, 233, 0.5);
+	    flex-direction: column;
+	    font-size: 10vw;
+	    font-weight: 100;
+	    text-align: center;
+	    padding: 1vw 1.5vw;
+	}
+	.date span {
+		font-size: 5vw;
+	}
+	.aside_text h2 {
+		font-size: 5.0vw;
+	    font-weight: 400;
+	}
+	.aside p {
+		line-height: 20vw;
+	    font-size: 12vw;
+	}
+	.aside_text {
+		padding: 0vw 2vw 2vw 2vw;
+	}
+}
