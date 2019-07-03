@@ -46,12 +46,17 @@ header {
 	align-self: center;
 	font-weight: 100;
 	font-size: 4vw;
+	padding-left: 2vw;
 }
 .header_logo span {
 	color: #B71757;
 }
 .main_nav {
 	font-size: 1.4vw;
+	padding-right: 2vw;
+}
+.main_nav li a:hover {
+	background-color: #283D5F; 
 }
 .main_nav li {
 	display: inline;
@@ -59,7 +64,10 @@ header {
 .main_nav li a {
 	text-decoration: none;
 	color: white;
-	padding-right: 1.3vw;
+	padding-top: 5vw;
+	padding-bottom: 4.1vw;
+	padding-left: 1.5vw;
+	padding-right: 1.5vw;
 }
 .alt_nav {
 	display: none;
@@ -91,9 +99,15 @@ section h2 {
 	font-weight: 100;
 	font-size: 4vw;
 }
+section .post_tx:hover {
+	opacity: 0.5;
+}
 section img {
 	width: 50%;
 	height: auto;
+}
+section img:hover {
+	opacity: 0.5;
 }
 article {
 	display: grid;
@@ -119,10 +133,10 @@ section:nth-child(even) {
 }
 .aside_text h2 {
 	font-size: 2.0vw;
-    font-weight: 400;
+    font-weight: 300;
 }
-.aside p {
-	line-height: 1.7vw;
+.aside_text p {
+	line-height: 2vw;
     font-size: 1.2vw;
 }
 aside img {
