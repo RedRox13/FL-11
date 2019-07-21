@@ -57,22 +57,29 @@ function Fighter(object) {
 	}
 }
 function battle(enemy1, enemy2) {
-	if (enemy1.getHealth() && enemy2.getHealth()) {
-		enemy1.attack(enemy2);
-		enemy2.attack(enemy1);
-		battle(enemy1, enemy2);
+	if(!enemy1.getHealth()) {
+		console.log(`${enemy1.getName()} is dead and can\`t fight`);
+	} else if (!enemy2.getHealth()) {
+		console.log(`${enemy2.getName()} is dead and can\`t fight`);
 	} else {
+		while(enemy1.getHealth() && enemy2.getHealth()) {
+			enemy1.attack(enemy2);
+			enemy2.attack(enemy1);
+		}
 		if (!enemy1.getHealth()) {
 			enemy2.addWin();
 			enemy1.addLoss();
-			console.log(`${enemy1.getName()} is dead and can\`t fight`);
 		} else {
 			enemy1.addWin();
 			enemy2.addLoss();
-			console.log(`${enemy2.getName()} is dead and can\`t fight`);
 		}
 	}
 }
 const fighter1 = new Fighter({name: 'John', damage: 20, hp: 100, agility: 25});
 const fighter2 = new Fighter({name: 'Jim', damage: 10, hp: 120, agility: 40});
 battle(fighter1, fighter2);
+fighter1.logCombatHistory();
+fighter2.logCombatHistory();
+battle(fighter1, fighter2);
+console.log(fighter1.getHealth());
+console.log(fighter2.getHealth());
