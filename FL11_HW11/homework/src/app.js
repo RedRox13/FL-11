@@ -19,7 +19,6 @@ function dragOver(e) {
 }
 function dragLeave() {
   this.classList.remove('over');
-
 }
 function dragDrop(e) {
   if (e.stopPropagation) {
@@ -64,7 +63,7 @@ function fullList() {
     let maxLimit = document.createElement('p');
 	maxLimit.textContent = 'Maximum item per list are created';
 	maxLimit.id = 'maxLimit';
-	if (counter < 3) {
+	if (counter < 10) {
 		addButton.setAttribute('class','material-icons button-active');
         addButton.addEventListener('click', addLine);
         if (document.getElementById('maxLimit')) {
