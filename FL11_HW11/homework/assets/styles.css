@@ -1,0 +1,80 @@
+body {
+	margin: 0;
+	text-align: center;
+	display: grid;
+	grid-template-columns: 50%;
+	justify-content: center;
+}
+#root p {
+	color: #36B1FE;
+	font-size: 2.2vw;
+	font-weight: 600;
+}
+#newAction {
+	width: 44.3vw;
+	height: 4vw;
+	border-radius: 0.3vw;
+	border: solid 1px #C8D0D8;
+	font-size: 1.5vw;
+	padding-left: 1vw;
+}
+#newAction::placeholder {
+	padding-left: 2vw;
+	font-size: 1vw;
+}
+#addButton:hover {
+	cursor: pointer;
+}
+.material-icons.button-active {
+	color: #36B1FE;
+	font-size: 4vw;
+	color: #36B1FE;
+	position: relative;
+	top: 1.4vw;
+}
+.material-icons.button-inactive {
+	color: #C8D0D8;
+	font-size: 4vw;
+	position: relative;
+	top: 1.4vw;
+}
+hr {
+	width: 100%;
+	height: 0.3vw;
+	background-color: #E4F2FE;
+	border: none;
+}
+#list div {
+	color: #36B1FE;
+	font-size: 1.5vw;
+	text-align: left;
+	position: relative;
+} 
+#checkbox_id {
+	background-color: white;
+	transform: scale(1.3);
+	cursor: pointer;
+}
+#correct {
+	cursor: pointer;
+	position: relative;
+	top: 0.1vw;
+}
+#deleteLine {
+	cursor: pointer;
+	text-align: right;
+	position: absolute;
+	right: 0;
+}
+#saveChange {
+	position: relative;
+	top: 0.5vw;
+}
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
