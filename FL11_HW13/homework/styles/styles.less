@@ -1,0 +1,46 @@
+@import 'variables.less';
+
+h1, h2 {
+	color: @blue;
+}
+hr {
+	background-color: @blue;
+}
+img {
+	width: 100%;
+}
+header {
+	background-color: @lightGrey;
+	li {
+		a {
+			color: @darkGrey;
+			font-weight: 500;
+		}
+		a:hover {
+			color: white !important;
+			background-color:@blue;
+		} 
+	}
+}
+.block-mixin(@color) {
+    p {
+        background-color: @color;
+    }
+    img {
+      border: 2px solid @color;
+    }
+}
+.relatedClasses {
+	&:nth-child(1) {
+		.block-mixin(@red)
+	}
+	&:nth-child(2) {
+		.block-mixin(@blue)
+	}
+	&:nth-child(3) {
+		.block-mixin(@orange)
+	}
+	&:nth-child(4) {
+		.block-mixin(@green)
+	}
+}
