@@ -2,7 +2,9 @@ function assign () {
 	let target = arguments[0];
 	for (let i = 1; i < arguments.length; i++) {
 		for (let k in arguments[i]) {
-			target[k] = arguments[i][k];
+			if (arguments[i].hasOwnProperty(k)) {
+				target[k] = arguments[i][k];
+			}
 		}		
 	}
 	return target;

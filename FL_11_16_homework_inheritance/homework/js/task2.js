@@ -1,7 +1,9 @@
 function create(obj) {
 	let result = {};
 	for (let i in obj) {
-		result[i] = obj[i];
+		if (obj.hasOwnProperty(i)) {
+			result[i] = obj[i];
+		}
 	}
 	result.__proto__ = obj;
 	return result;
