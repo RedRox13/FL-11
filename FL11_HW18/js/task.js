@@ -1,8 +1,8 @@
 let list;
 let url = 'https://jsonplaceholder.typicode.com/users';
-let loader = document.getElementById('cover');
+let loader = document.getElementById('loader');
 let list_box_el = document.getElementById('list_box');
-
+//loader
 function showLoader() {
 	loader.style.display = 'block';
 	list_box_el.style.display = 'none';
@@ -12,8 +12,7 @@ function hideLoader() {
 	loader.style.display = 'none';
 	list_box_el.style.display = 'block';
 }
-
-
+//initial request
 function sendRequest() {
 	showLoader();
 	let xhr = new XMLHttpRequest();
@@ -25,9 +24,72 @@ function sendRequest() {
 	xhr.send(null);
 }
 sendRequest();
-
+//list
 function makeList() {
 	for (let i = 0; i < list.length; i++) {
+				let toEdit = function () {
+			//change name
+			if (inputName.value) {
+				addName.textContent = `name: ${inputName.value}`;
+				list[i].name = inputName.value;
+				inputName.value = '';
+			}
+			//change email
+			if (inputEmail.value) {
+				addEmail.textContent = `email: ${inputEmail.value}`;
+				list[i].email = inputEmail.value;
+				inputEmail.value = '';
+			}
+			//change phone number
+			if (inputPhone.value) {
+				addPhone.textContent = `phone: ${inputPhone.value}`;
+				list[i].phone = inputPhone.value;
+				inputPhone.value = '';
+			}
+			//change company name
+			if (inputCompany.value) {
+				addCompany.textContent = `company name: ${inputCompany.value}`;
+				list[i].company.name = inputCompany.value;
+				inputCompany.value = '';
+			}
+			//update user on server
+			showLoader();
+			let userJson = JSON.stringify(list[i]);
+			let xhr_put = new XMLHttpRequest();
+			xhr_put.open('PUT', url + '/' + userId, true);
+			xhr_put.setRequestHeader('Content-type','application/json; charset=utf-8');
+			xhr_put.onload = function () {
+				let xhr_put_response = JSON.parse(xhr_put.responseText);
+				if (xhr_put.readyState === 4 && xhr_put.status === 200) {
+					console.table(xhr_put_response);
+				} else {
+					console.error(xhr_put_response);
+				}
+				hideLoader();
+			}
+			xhr_put.send(userJson);
+		}
+		//delete function
+		let toDelete = function () {
+			showLoader();
+			let xhr_delete = new XMLHttpRequest();
+			xhr_delete.open('DELETE', url + '/' + userId, true);
+			xhr_delete.onload = function () {
+				let xhr_delete_response = JSON.parse(xhr_delete.responseText);
+				if (xhr_delete.readyState === 4 && xhr_delete.status === 200) {
+					console.table(xhr_delete_response);
+				} else {
+					console.error(xhr_delete_response);
+				}
+				hideLoader();
+			}
+			xhr_delete.send(null);
+			list_box_el.removeChild(div);
+		}
+		//redirect 
+		let redirect = function () {
+			window.location.replace('index_2.html?id=' + list[i].id);
+		}
 		let userId = i + 1 + '';
 		let div = document.createElement('div');
 		div.setAttribute('id', 'line');
@@ -69,69 +131,7 @@ function makeList() {
 		deleteBtn.onclick = toDelete;
 		div.appendChild(deleteBtn);
 		//edit fucntion
-		function toEdit() {
-			//change name
-			if (inputName.value) {
-				addName.textContent = `name: ${inputName.value}`;
-				list[i].name = inputName.value;
-				inputName.value = '';
-			}
-			//change email
-			if (inputEmail.value) {
-				addEmail.textContent = `email: ${inputEmail.value}`;
-				list[i].email = inputEmail.value;
-				inputEmail.value = '';
-			}
-			//change phone number
-			if (inputPhone.value) {
-				addPhone.textContent = `phone: ${inputPhone.value}`;
-				list[i].phone = inputPhone.value;
-				inputPhone.value = '';
-			}
-			//change company name
-			if (inputCompany.value) {
-				addCompany.textContent = `company name: ${inputCompany.value}`;
-				list[i].company.name = inputCompany.value;
-				inputCompany.value = '';
-			}
-			//update user on server
-			showLoader();
-			let userJson = JSON.stringify(list[i]);
-			let xhr_put = new XMLHttpRequest();
-			xhr_put.open("PUT", url + '/' + userId, true);
-			xhr_put.setRequestHeader('Content-type','application/json; charset=utf-8');
-			xhr_put.onload = function () {
-				let xhr_put_response = JSON.parse(xhr_put.responseText);
-				if (xhr_put.readyState == 4 && xhr_put.status == "200") {
-					console.table(xhr_put_response);
-				} else {
-					console.error(xhr_put_response);
-				}
-				hideLoader();
-			}
-			xhr_put.send(userJson);
-		}
-		//delete function
-		function toDelete() {
-			showLoader();
-			let xhr_delete = new XMLHttpRequest();
-			xhr_delete.open("DELETE", url + '/' + userId, true);
-			xhr_delete.onload = function () {
-				let xhr_delete_response = JSON.parse(xhr_delete.responseText);
-				if (xhr_delete.readyState == 4 && xhr_delete.status == "200") {
-					console.table(xhr_delete_response);
-				} else {
-					console.error(xhr_delete_response);
-				}
-				hideLoader();
-			}
-			xhr_delete.send(null);
-			list_box_el.removeChild(div);
-		}
-		//redirect 
-		function redirect() {
-			window.location.replace("index_2.html?id=" + list[i].id);
-		}
+
 
 		list_box_el.appendChild(div);
 	}
