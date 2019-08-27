@@ -1,0 +1,15 @@
+#line {
+	border: black solid 1px;
+	margin: 5px;
+}
+button {
+	width: auto;
+	height: 30px;
+	display: flex;
+}
+#cover {
+  background: url("http://www.aveva.com/Images/ajax-loader.gif") no-repeat scroll center center rgba(255, 255, 255, 0.5);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
