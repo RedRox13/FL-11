@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Homework 19 - Tools</title>
+  </head>
+  <body>
+    <h1>Let`s play!</h1>
+    <p>
+      But first, read some rules: <br />-Scissors beats a paper, <br />-Paper
+      beats rock, <br />-Rock beats scissors. <br />-And we play up to three
+      wins!
+    </p>
+    <div class="buttons_box">
+      <div class="button">
+        <button id="paperBtn" onclick='game("Paper")'>Paper</button>
+      </div>
+      <div class="button">
+        <button id="rockBtn" onclick='game("Rock")'>Rock</button>
+      </div>
+      <div class="button">
+        <button id="scissorsBtn" onclick='game("Scissors")'>Scissors</button>
+      </div>
+    </div>
+    <h2>Results</h2>
+    <div id="result"></div>
+    <button onclick="reset()">Reset</button>
+  </body>
+</html>

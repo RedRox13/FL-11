@@ -1,0 +1,11 @@
+import counter from "./main.js";
+import score from "./main.js";
+import game from "./main.js";
+import check from "./check.js";
+import result from "./result.js";
+import block from "./block.js";
+import reset from "./reset.js";
+import "../sass/styles.scss";
+import "../sass/mixins.scss";
+import "../fonts/Trixie.otf";
+import "../img/bg.jpg";

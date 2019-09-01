@@ -1,0 +1,22 @@
+@font-face {
+  font-family: myFont;
+  src: url("./../fonts/Trixie.otf");
+}
+@mixin btn {
+  button {
+    background-color: transparent;
+    border: #000 solid 3px;
+    font-family: myFont;
+    height: 3.5vw;
+    width: 10vw;
+    border-radius: 3px;
+    font-size: 2vw;
+    &:hover {
+      background: rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+}
